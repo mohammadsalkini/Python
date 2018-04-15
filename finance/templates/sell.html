@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+    Sell
+{% endblock %}
+{% block main %}
+    <form action="{{ url_for('sell') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <select autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol"  />
+                <option>symbol</option>
+                {% for symbolName in SymbolName %}
+                <option>{{symbolName.distintSymbol}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="number" min="0"/>
+            </div>
+                <button class="btn btn-primary" type="submit">Sell</button>
+        </fieldset>
+    </form>
+{% endblock %}

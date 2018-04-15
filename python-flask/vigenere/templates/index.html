@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+   <div class="col">
+       <form action="/convert" enctype="multipart/form-data" method="post">
+           <input type="file" name="file" /> <br />
+           <input type="text" name="key" /> Enter Key <br />
+           <input type= radio name="algorithm" value="encrypt" /> encrypter <br />
+           <input type= radio name="algorithm" value="decrypt" /> decrypter <br />
+           <button  type="submit" >convert</button>
+       </form>
+   </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+           file1:<br>
+           <input type="file" name="file1">
+           <br>
+           file2:<br>
+           <input type="file" name="file2">
+           <br>
+           <br>
+           algorithm:<br>
+           <input type="radio" name="algorithm" value="lines" onclick="document.getElementById('length').disabled=true; document.getElementById('length').value=0;" checked> Line<br>
+           <input type="radio" name="algorithm" value="sentences" onclick="document.getElementById('length').disabled=true; document.getElementById('length').value=0;" > Sentence<br>
+           <input type="radio" name="algorithm" value="substrings" onclick="document.getElementById('length').disabled=false;" > Substring
+           <br>
+           <br>
+           length:<br>
+           <input type="number" name="length" id="length" value="length" min="0" disabled="true">
+           <br>
+           <br>
+           <button type="submit">compare</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}
